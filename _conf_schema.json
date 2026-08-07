@@ -1,0 +1,44 @@
+{
+  "max_images_per_call": {
+    "description": "一次最多取回的原图数量",
+    "type": "int",
+    "default": 5,
+    "hint": "模型可在一次工具调用中按顺序读取多张图片；范围 1 到 20。"
+  },
+  "max_capture_images_per_message": {
+    "description": "单条群消息最多建立定位的图片数",
+    "type": "int",
+    "default": 10,
+    "hint": "范围 1 到 50；超出的图片仍可进入 AstrBot 原生群聊感知，但不缓存原图或附加提取码。"
+  },
+  "max_capture_image_mb": {
+    "description": "单张原图缓存与读取上限（MiB）",
+    "type": "int",
+    "default": 32,
+    "hint": "范围 1 到 128；在整图读入插件内存前检查本地文件大小。"
+  },
+  "only_expose_when_referenced": {
+    "description": "仅在当前请求出现图片提取码时暴露工具",
+    "type": "bool",
+    "default": true,
+    "hint": "推荐开启。避免没有群聊感知图片时占用工具描述上下文。"
+  },
+  "retention_hours": {
+    "description": "原图定位记录保留时长（小时）",
+    "type": "int",
+    "default": 168,
+    "hint": "默认 7 天；设为 0 表示不按时间清理，仍受总缓存空间限制。"
+  },
+  "max_cache_mb": {
+    "description": "原图缓存最大空间（MB）",
+    "type": "int",
+    "default": 1024,
+    "hint": "默认 1GB；设为 0 表示不按总空间清理。只管理本插件原图缓存，不干预图片模型调用次数。"
+  },
+  "cleanup_interval_seconds": {
+    "description": "缓存清理检查间隔（秒）",
+    "type": "int",
+    "default": 3600,
+    "hint": "仅清理本插件到期或超出空间配额的原图记录。"
+  }
+}
