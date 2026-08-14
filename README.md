@@ -40,7 +40,7 @@ forward_context_images(R, d)
 ## 安装与启用
 
 1. 在 AstrBot 插件管理中使用仓库 URL 安装，或上传精简 ZIP。
-2. 确认平台是 `aiocqhttp`，AstrBot 版本满足 `>=4.26.1,<4.27`。
+2. 确认平台是 `aiocqhttp`，AstrBot 版本满足 `>=4.26.1`（不设版本上限）。
 3. 在 AstrBot 配置中启用群聊上下文感知；只有 `group_icl_enable=true` 时插件才缓存群图和附加提取码。图片描述模型可选。
 4. 保存插件配置并重载插件。
 
